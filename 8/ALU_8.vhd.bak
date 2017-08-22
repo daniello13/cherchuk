@@ -1,0 +1,24 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use work.my_rol.all;
+use work.bus_or.all;
+use work.bus_inc.all;
+use work.div.all;
+use work.add.all;
+
+entity ALU_8 is
+	port(
+		mode : in std_logic; 
+		A, B : in std_logic_vector(3 downto 0);
+		op : in std_logic_vector()1 downto 0);
+		RES : out std_logic_vector(3 downto 0)
+		);
+	end entity;
+architecture behaviour of ALU_8 is
+	begin
+	process(A, B) is
+		begin
+		RES <= A + B;
+	end process;
+end architecture;

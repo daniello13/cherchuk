@@ -1,0 +1,27 @@
+library ieee;
+Use ieee.std_logic_1164.all;
+entity test_D is
+end test_D;
+
+architecture behavior of test_D is 
+	component D_trig
+		port(
+			D, C, R, S : in  std_logic;
+			Q : out std_logic);
+	end component;
+	signal D, C, R, S: std_logic;
+	signal Q: STD_logic;
+	begin
+	p1: a port map (D => D, C => C, R => R, S => S, Q => Q);
+	D <= '1',
+			'0' after 400 ns;
+	C <= '1';
+	R <= '1',
+			'0' after 100 ns,
+			'1' after 200 ns;
+	S <= '0',
+			'1' after 100 ns,
+			'0' after 100 ns,
+			'1' after 100 ns;
+end behavior;
+		

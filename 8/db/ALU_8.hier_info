@@ -1,0 +1,88 @@
+|ALU_8
+mode => result[0]$latch.LATCH_ENABLE
+mode => result[1]$latch.LATCH_ENABLE
+mode => result[2]$latch.LATCH_ENABLE
+mode => result[3]$latch.LATCH_ENABLE
+A[0] => my_rol:e1.A[0]
+A[0] => bus_or:e2.A[0]
+A[0] => cmp:e5.A[0]
+A[1] => my_rol:e1.A[1]
+A[1] => bus_or:e2.A[1]
+A[1] => cmp:e5.A[1]
+A[2] => my_rol:e1.A[2]
+A[2] => bus_or:e2.A[2]
+A[2] => cmp:e5.A[2]
+A[3] => my_rol:e1.A[3]
+A[3] => bus_or:e2.A[3]
+A[3] => cmp:e5.A[3]
+B[0] => my_rol:e1.B[0]
+B[0] => bus_or:e2.B[0]
+B[0] => cmp:e5.B[0]
+B[1] => my_rol:e1.B[1]
+B[1] => bus_or:e2.B[1]
+B[1] => cmp:e5.B[1]
+B[2] => my_rol:e1.B[2]
+B[2] => bus_or:e2.B[2]
+B[2] => cmp:e5.B[2]
+B[3] => my_rol:e1.B[3]
+B[3] => bus_or:e2.B[3]
+B[3] => cmp:e5.B[3]
+op[0] => Mux0.IN2
+op[0] => Mux1.IN2
+op[0] => Mux2.IN2
+op[0] => Mux3.IN2
+op[1] => Mux0.IN1
+op[1] => Mux1.IN1
+op[1] => Mux2.IN1
+op[1] => Mux3.IN1
+result[0] <= result[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_8|my_rol:e1
+A[0] => RotateRight0.IN3
+A[1] => RotateRight0.IN2
+A[2] => RotateRight0.IN1
+A[3] => RotateRight0.IN0
+B[0] => RotateRight0.IN7
+B[1] => RotateRight0.IN6
+B[2] => RotateRight0.IN5
+B[3] => RotateRight0.IN4
+RES[0] <= RotateRight0.DB_MAX_OUTPUT_PORT_TYPE
+RES[1] <= RotateRight0.DB_MAX_OUTPUT_PORT_TYPE
+RES[2] <= RotateRight0.DB_MAX_OUTPUT_PORT_TYPE
+RES[3] <= RotateRight0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_8|bus_or:e2
+A[0] => RES.IN0
+A[1] => RES.IN0
+A[2] => RES.IN0
+A[3] => RES.IN0
+B[0] => RES.IN1
+B[1] => RES.IN1
+B[2] => RES.IN1
+B[3] => RES.IN1
+RES[0] <= RES.DB_MAX_OUTPUT_PORT_TYPE
+RES[1] <= RES.DB_MAX_OUTPUT_PORT_TYPE
+RES[2] <= RES.DB_MAX_OUTPUT_PORT_TYPE
+RES[3] <= RES.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_8|cmp:e5
+A[0] => Equal0.IN3
+A[1] => Equal0.IN2
+A[2] => Equal0.IN1
+A[3] => Equal0.IN0
+B[0] => Equal0.IN7
+B[1] => Equal0.IN6
+B[2] => Equal0.IN5
+B[3] => Equal0.IN4
+RES[0] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+RES[1] <= <GND>
+RES[2] <= <GND>
+RES[3] <= <GND>
+
+

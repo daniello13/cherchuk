@@ -1,0 +1,31 @@
+|majel
+inputA[0] => output.IN0
+inputA[0] => output.IN0
+inputA[1] => output.IN0
+inputA[1] => output.IN0
+inputA[2] => output.IN0
+inputA[2] => output.IN0
+inputA[3] => output.IN0
+inputA[3] => output.IN0
+inputB[0] => output.IN1
+inputB[0] => output.IN0
+inputB[1] => output.IN1
+inputB[1] => output.IN0
+inputB[2] => output.IN1
+inputB[2] => output.IN0
+inputB[3] => output.IN1
+inputB[3] => output.IN0
+inputC[0] => output.IN1
+inputC[0] => output.IN1
+inputC[1] => output.IN1
+inputC[1] => output.IN1
+inputC[2] => output.IN1
+inputC[2] => output.IN1
+inputC[3] => output.IN1
+inputC[3] => output.IN1
+output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
